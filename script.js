@@ -50,7 +50,7 @@ for (let i = 0; i < 9; i++) {
 
     columnOne.text(formatTime);
 
-    let storedInput = $("<textarea class = 'w-100 h-100' id = 'inputText'>")
+    let storedInput = $("<textarea id = 'inputText'>")
     columnTwo.append(storedInput);
     storedInput.text(userInput[i]);
     storedInput.attr("class", currentHour);
