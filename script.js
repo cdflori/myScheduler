@@ -32,17 +32,13 @@ for (let i = 0; i < 9; i++) {
 
     // Determine instance of timeblocks to display past, present or future class using if/ else if/ else
     if (timeHour < currentTime) {
-        currentHour = "past";
-        
+        currentHour = "past";    
     }
     else if (timeHour == currentTime) {
-        currentHour = "present";
-        
+        currentHour = "present";  
     }
     else {
         currentHour = "future";
-        
-
     }
 
 
@@ -59,17 +55,15 @@ for (let i = 0; i < 9; i++) {
     storedInput.text(userInput[i]);
     storedInput.attr("class", currentHour);
 
-    let saveButton = $("<button class = 'saveBtn icon w-100 h-100'>")
+    let saveButton = $("<button class = 'saveBtn icon'>")
     columnThree.append(saveButton);
 
     let icon = $('<i class="far fa-save fa-2x"></i>');
     saveButton.append(icon);
 
-    // appends the new rows to the page
     newRow.append(columnOne, columnTwo, columnThree);
     $(".container").append(newRow);
 
-    // creating an id to store the text into an array
     newRow.attr('rowData', i);
 
 }
@@ -79,10 +73,9 @@ $('.saveBtn').on("click", function () {
     textInput = $(this).parent().siblings('.timeblock').children().val();
     newRowInput = $(this).parent().parent().attr('rowData');
 
-    console.log(textInput);
-    console.log(newRowInput);
+//     console.log(textInput);
+//     console.log(newRowInput);
 
     userInput[newRowInput] = textInput
-
     localStorage.setItem("myScheduler", userInput);
 });
